@@ -1,8 +1,40 @@
 extends layout
 
 block hero-unit
-  .jumbotron
-    .container
+  .row.none
+    .col-12.bannerimg
+        #carouselExampleSlidesOnly.carousel.slide(data-ride="carousel")
+          .carousel-inner
+            .carousel-item.active
+              img.d-block.w-100(src="https://cdn.evbstatic.com/s3-build/perm_001/35d88f/django/images/home/banners/homepage_hero_banner_1.jpg" alt="First slide")
+            .carousel-item
+              img.d-block.w-100(src="https://cdn.evbstatic.com/s3-build/perm_001/aa36c3/django/images/home/banners/homepage_hero_banner_2.jpg", alt="Second slide")
+            .carousel-item
+              img.d-block.w-100(src="https://cdn.evbstatic.com/s3-build/perm_001/6812b9/django/images/home/banners/homepage_hero_banner_3.jpg", alt="Third slide")
+  .container.search
+    .jumbotron.bg-white.border.border-dark.search
+       p.display-4.text-warning Find your next experience
+       form.form-inline
+        .form-row
+          .form-group
+            label.col-form-label
+            input.form-control(type="text" placeholder="Search events or categories")
+          .form-group
+            label.col-form-label
+            input.form-control(type="text" placeholder="City or location")
+          .form-group
+            label.col-form-label
+            select#searchdate.form-control
+                option All dates
+                option Today
+                option Tomorrow
+                option This week
+                option This weekend
+                option Next week
+                option Next month
+          button.btn.btn-warning Search
+
+                  
       
 block content
   .container

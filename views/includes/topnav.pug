@@ -1,25 +1,37 @@
 .header.clearfix
-  nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
-    .container
-      a.navbar-brand(href="/") MJ Overflow
-      button.navbar-toggler(type="button", data-toggle="collapse", data-target="#navbarsExampleDefault", aria-controls="navbarsExampleDefault", aria-expanded="false", aria-label="Toggle navigation")
+  nav.navbar.navbar-expand-md.navbar-light.bg-dark.fixed-top
+      a.navbar-brand.text-warning(href="/") Eventbrite
+      button.navbar-toggler(type="button", data-toggle="collapse", data-target="#navbarNavDropdown", aria-controls="navbarNavDropdown", aria-expanded="false", aria-label="Toggle navigation")
         span.navbar-toggler-icon
 
-      #navbarsExampleDefault.collapse.navbar-collapse
+      #navbarsExampleDefault.collapse.navbar-collapse.justify-content-sm-end
         ul.navbar-nav.ml-auto
           li.nav-item
-            a.nav-link(href="/questions") Questions
+            a.nav-link(href="/questions") BROWSE EVENT
+          li.nav-item.dropdown
+            a.nav-link.dropdown-toggle(href="/",data-toggle="dropdown", aria-haspopup="true",aria-expanded="false") ORGANIZE
+              .dropdown-menu
+                .dropdown-item(href="#") Overview
+                .dropdown-item(href="#") Pricing
+                .dropdown-item(href="#") Blog
+                .dropdown-item(href="#") Resource
+          li.nav-item.dropdown
+             a.nav-link.dropdown-toggle(href="/",data-toggle="dropdown", aria-haspopup="true",aria-expanded="false") HELP
+              .dropdown-menu
+                .dropdown-item(href="#") Where are my ticket
+                .dropdown-item(href="#") How to contact
+                .dropdown-item(href="#") Help Center
           li.nav-item
-            a.nav-link(href="/users") Users
+             a.nav-link(href="/questions") CREATE EVENT
           if (!currentUser) 
             li.nav-item
-              a.nav-link(href='/signin') Signin
+              a.nav-link(href='/signin') SIGN IN
             li.nav-item
-              a.nav-link(href='/users/new') Signup
+              a.nav-link(href='/users/new') SING UP
           else
             li.nav-item
-              a.nav-link(href=`/users/${currentUser._id}`) My Profile
+              a.nav-link(href=`/users/${currentUser._id}`) MY PROFILE
             li.nav-item
-              a.nav-link(href='/signout') Signout
+              a.nav-link(href='/signout') SIGN OUT
         
           
