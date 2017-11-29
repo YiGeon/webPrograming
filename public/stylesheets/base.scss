@@ -13,12 +13,40 @@ a:hover {
   text-decoration: none;
 }
 
-.jumbotron {
+.jumbotron.title {
   margin-top: -1em;
-  background: url('/images/bg.jpg') no-repeat left center;
+  background: url("/images/bg.jpg") no-repeat left center;
   min-height: 20em;
   color: #fff;
   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.jumbotron a:link {
+  color: #E7E7E7;
+  text-decoration: none;
+}
+
+.jumbotron a:visited {
+  color: #E7E7E7;
+  text-decoration: none;
+}
+
+.jumbotron a:hover {
+  color: #E7E7E7;
+  text-decoration: underline;
+}
+
+.jumbotron.bottom {
+  width: 100%;
+  height: 100%;
+  margin-top: 3rem;
+  margin-bottom: 0;
+  background-color: #222222;
+  color: #E7E7E7
+}
+
+.jumbotron.country {
+  margin-top: 2rem;
 }
 
 .form-actions {
@@ -44,9 +72,10 @@ a:hover {
   color: #011a72;
 }
 
-.header > .navbar {
-  background-color: #011a72!important;
+.header>.navbar {
+  background-color: #ffffff !important;
 }
+
 
 .search-input-group{
   margin: 1em 0;
