@@ -1,5 +1,5 @@
 {
-  "name": "webPrograming",
+  "name": "webprograming",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -27,5 +27,21 @@
     "pug": "2.0.0-beta11",
     "serve-favicon": "~2.4.5",
     "socket.io": "^2.0.4"
-  }
+  },
+  "main": "app.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YiGeon/webPrograming.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YiGeon/webPrograming/issues"
+  },
+  "homepage": "https://github.com/YiGeon/webPrograming#readme",
+  "description": ""
 }
