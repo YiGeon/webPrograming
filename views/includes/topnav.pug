@@ -7,7 +7,7 @@
       #navbarsExampleDefault.collapse.navbar-collapse.justify-content-sm-end
         ul.navbar-nav.ml-auto
           li.nav-item
-            a.nav-link(href="/questions") BROWSE EVENT
+            a.nav-link(href="/events") BROWSE EVENT
           li.nav-item.dropdown
             a.nav-link.dropdown-toggle(href="/",data-toggle="dropdown", aria-haspopup="true",aria-expanded="false") ORGANIZE
               .dropdown-menu
@@ -22,7 +22,7 @@
                 .dropdown-item(href="#") How to contact
                 .dropdown-item(href="#") Help Center
           li.nav-item
-             a.nav-link(href="/questions/new") CREATE EVENT
+             a.nav-link(href="/events/new") CREATE EVENT
           if (!currentUser) 
             li.nav-item
               a.nav-link(href='/signin') SIGN IN
