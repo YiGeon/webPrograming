@@ -14,7 +14,7 @@ block hero-unit
   .container.search
     .jumbotron.bg-white.border.border-dark.search
        p.display-4.text-warning Find your next experience
-       form.form-inline
+       form.form-inline(action='/events', method='GET')
         .form-row
           .form-group
             label.col-form-label
