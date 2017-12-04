@@ -13,6 +13,6 @@ var schema = new Schema({
   toObject: {virtuals: true}
 });
 schema.plugin(mongoosePaginate);
-var Answer = mongoose.model('Answer', schema);
+var Join = mongoose.model('Join', schema);
 
-module.exports = Answer;
+module.exports = Join;

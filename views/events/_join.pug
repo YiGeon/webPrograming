@@ -1,0 +1,13 @@
+.join.card(id= join.id)
+  .container
+    .a reason for participation
+  .card-body
+    .content= join.content
+  .row.card-body
+    .col-sm
+    .col-sm.text-right
+      .author
+        | joined on #{moment(join.createdAt).format('YYYY-MM-DD')}
+        if join.author
+          | 
+          | by #[a(href=`/users/${join.author.id}`)= join.author.name]
