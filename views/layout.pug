@@ -46,12 +46,12 @@ html
         socket.emit('join');
       });
 
-      socket.on('answered', function(data) {
-        // answered를 받으면 링크를 notifier로 출력한다.
+      socket.on('joined', function(data) {
+        // joined를 받으면 링크를 notifier로 출력한다.
         var title = $('<div></div>').text(data.event.title).html();
         $.notify({
           icon: 'fa fa-bell',
-          title: 'You hace a new answer.',
+          title: 'You hace a new join.',
           url: data.url,
           message: title
         });

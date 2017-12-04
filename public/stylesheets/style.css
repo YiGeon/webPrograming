@@ -141,33 +141,33 @@ a:hover {
 .show .buttons {
   margin: 1em 0; }
 
-.show .answer {
+.show .join {
   position: relative;
   margin-bottom: 1em; }
-  .show .answer .like-badge {
+  .show .join .like-badge {
     text-align: center;
     padding: 0.5em;
     position: absolute; }
-    .show .answer .like-badge .button {
+    .show .join .like-badge .button {
       font-size: 0.8em; }
-  .show .answer .card-body {
+  .show .join .card-body {
     padding-left: 4em; }
-  .show .answer .content {
+  .show .join .content {
     margin-bottom: 0.5em;
     color: #888; }
 
-.event-like-btn, .answer-like-btn {
+.event-like-btn, .join-like-btn {
   cursor: pointer; }
-  .event-like-btn .for-loading, .answer-like-btn .for-loading {
+  .event-like-btn .for-loading, .join-like-btn .for-loading {
     display: none; }
-  .event-like-btn.loading, .answer-like-btn.loading {
+  .event-like-btn.loading, .join-like-btn.loading {
     filter: opacity(30%);
     cursor: wait; }
-    .event-like-btn.loading > span, .answer-like-btn.loading > span {
+    .event-like-btn.loading > span, .join-like-btn.loading > span {
       display: none; }
-    .event-like-btn.loading .for-loading, .answer-like-btn.loading .for-loading {
+    .event-like-btn.loading .for-loading, .join-like-btn.loading .for-loading {
       display: inline-block; }
-  .event-like-btn.disabled, .answer-like-btn.disabled {
+  .event-like-btn.disabled, .join-like-btn.disabled {
     color: #bbb;
     cursor: default; }
 

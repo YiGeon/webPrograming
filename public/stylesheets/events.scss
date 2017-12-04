@@ -48,7 +48,7 @@
     margin: 1em 0;
   }
 
-  .answer {
+  .join {
     position: relative;
     .like-badge {
       text-align: center;
@@ -69,7 +69,7 @@
   }
 }
 
-.event-like-btn, .answer-like-btn {
+.event-like-btn, .join-like-btn {
   .for-loading {display: none;}
   cursor: pointer; 
 

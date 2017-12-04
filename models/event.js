@@ -14,7 +14,7 @@ var schema = new Schema({
   fee: {type: String, default: 0},
   tags: [String],
   numLikes: {type: Number, default: 0},
-  numAnswers: {type: Number, default: 0},
+  numJoins: {type: Number, default: 0},
   numReads: {type: Number, default: 0},
   createdAt: {type: Date, default: Date.now}
 }, {

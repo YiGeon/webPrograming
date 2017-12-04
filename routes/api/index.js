@@ -1,6 +1,6 @@
 const express = require('express');
 const Event = require('../../models/event'); 
-const Answer = require('../../models/answer'); 
+const Join = require('../../models/join'); 
 const LikeLog = require('../../models/like-log'); 
 const catchErrors = require('../../lib/async-error');
 
@@ -33,12 +33,12 @@ router.post('/events/:id/like', catchErrors(async (req, res, next) => {
   return res.json(event);
 }));
 
-// Like for Answer
-router.post('/answers/:id/like', catchErrors(async (req, res, next) => {
-  const answer = await Answer.findById(req.params.id);
-  answer.numLikes++;
-  await answer.save();
-  return res.json(answer);
+// Like for Join
+router.post('/joins/:id/like', catchErrors(async (req, res, next) => {
+  const join = await Join.findById(req.params.id);
+  join.numLikes++;
+  await join.save();
+  return res.json(join);
 }));
 
 router.use((err, req, res, next) => {

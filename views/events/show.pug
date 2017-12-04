@@ -35,18 +35,18 @@ block content
             | 
             a.btn.btn-outline-danger.need-confirm-btn(href=`/events/${event.id}?_method=delete`) Delete
      
-    if event.numAnswers > 0
+    if event.numJoins > 0
      if event.author && event.author.id == currentUser.id
       hr
-      h3 #{event.numAnswers} participant(s)
-      .answers.show
-        each answer in answers
-          include _answer 
+      h3 #{event.numJoins} participant(s)
+      .joins.show
+        each join in joins
+          include _join 
 
     if currentUser
-      form(action=`/events/${event.id}/answers`, method='POST')
+      form(action=`/events/${event.id}/joins`, method='POST')
         .form-group
-          label(for='answer') Join Register
+          label(for='join') Join Register
           textarea.form-control(name="content", rows="3", placeholder="What is the reason for participation?")
         button.btn.btn-primary(type="submit") Submit
 

@@ -1,6 +1,6 @@
 const express = require('express');
 const Event = require('../models/event');
-const Answer = require('../models/answer'); 
+const Join = require('../models/join'); 
 const catchErrors = require('../lib/async-error');
 
 
@@ -92,11 +92,11 @@ module.exports = io => {
 
   router.get('/:id', catchErrors(async (req, res, next) => {
     const event = await Event.findById(req.params.id).populate('author');
-    const answers = await Answer.find({event: event.id}).populate('author');
+    const joins = await Join.find({event: event.id}).populate('author');
     event.numReads++;    // TODO: 동일한 사람이 본 경우에 Read가 증가하지 않도록???
 
     await event.save();
-    res.render('events/show', {event: event, answers: answers});
+    res.render('events/show', {event: event, joins: joins});
   }));
 
   router.put('/:id', catchErrors(async (req, res, next) => {
@@ -155,7 +155,7 @@ module.exports = io => {
     res.redirect('/events');
   }));
 
-  router.post('/:id/answers', needAuth, catchErrors(async (req, res, next) => {
+  router.post('/:id/joins', needAuth, catchErrors(async (req, res, next) => {
     const user = req.user;
     const event = await Event.findById(req.params.id);
 
@@ -164,19 +164,19 @@ module.exports = io => {
       return res.redirect('back');
     }
 
-    var answer = new Answer({
+    var join = new Join({
       author: user._id,
       event: event._id,
       content: req.body.content
     });
-    await answer.save();
-    event.numAnswers++;
+    await join.save();
+    event.numJoins++;
     await event.save();
 
-    const url = `/events/${event._id}#${answer._id}`;
+    const url = `/events/${event._id}#${join._id}`;
     io.to(event.author.toString())
-      .emit('answered', {url: url, event: event});
-    console.log('SOCKET EMIT', event.author.toString(), 'answered', {url: url, event: event})
+      .emit('joined', {url: url, event: event});
+    console.log('SOCKET EMIT', event.author.toString(), 'joined', {url: url, event: event})
     req.flash('success', 'Successfully joined');
     res.redirect(`/events/${req.params.id}`);
   }));
