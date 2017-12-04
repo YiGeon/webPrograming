@@ -177,7 +177,7 @@ module.exports = io => {
     io.to(event.author.toString())
       .emit('answered', {url: url, event: event});
     console.log('SOCKET EMIT', event.author.toString(), 'answered', {url: url, event: event})
-    req.flash('success', 'Successfully answered');
+    req.flash('success', 'Successfully joined');
     res.redirect(`/events/${req.params.id}`);
   }));
 
