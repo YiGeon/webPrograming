@@ -37,6 +37,9 @@ module.exports = io => {
     if (!organizerName) {
       return 'Organizer Name is required.';
     }
+    if (!organizerDescription) {
+      return 'Organizer Descriptionis required.';
+    }
   
     if (!content) {
       return 'Description is required.';
@@ -111,6 +114,7 @@ module.exports = io => {
     event.startTime = req.body.startTime;
     event.endTime = req.body.endTime;
     event.organizerName = req.body.organizerName;
+    event.organizerDescription = req.bodt.organizerDescription;
     event. fee = req.body.fee;
     event.tags = req.body.tags.split(" ").map(e => e.trim());
 
@@ -140,6 +144,7 @@ module.exports = io => {
       startTime: req.body.startTime,
       endTime: req.body.endTime,
       organizerName: req.body.organizerName,
+      organizerDescription: req.body.organizerDescription,
       fee: req.body.fee,
       tags: req.body.tags.split(" ").map(e => e.trim()),
     });

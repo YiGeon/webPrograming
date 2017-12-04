@@ -1,19 +1,23 @@
 .form-group
   label(for="title") Title
   input.form-control(type="text", name="title", placeholder="Enter your event title", value=event.title)
-.form-row.form-group
-  .col
-    label(for="organizerName") Organizer Name
-    input.form-control(type="text", name="organizerName", placeholder="Enter Organizer Name", value=event.organizerName)
-  .col
-    label(for="fee") Ticket Price
-    input.form-control(type="text", name="fee", placeholder="Enter a fee if you plan to pay a fee.", value=event.fee)
 .form-group
   label(for="content") Description
-  textarea.form-control(name="content", rows="8")= event.content
-.form-group
-  label(for="location") Location
-  input.form-control(type="text", name="location", placeholder="Event Location", value=event.location)
+  textarea.form-control(name="content", rows="10")= event.content
+.form-row
+  .form-group.col-md-3
+    label(for="organizerName") Organizer Name
+    input.form-control(type="text", name="organizerName", placeholder="Enter Organizer Name", value=event.organizerName)
+  .form-group.col-md-9
+    label(for="organizerDescription") Organizer Description
+    input.form-control(type="text", name="organizerDescription", placeholder="Enter Organizer Description.", value=event.organizerDescription)
+.form-row
+  .form-group.col
+    label(for="location") Location
+    input.form-control(type="text", name="location", placeholder="Event Location", value=event.location)
+  .form-group.col
+    label(for="fee") Ticket Price
+    input.form-control(type="text", name="fee", placeholder="Enter a fee if you plan to pay a fee.", value=event.fee)
 .form-row.form-group
   .col
     label(for="startTime") Start Time

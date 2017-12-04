@@ -10,6 +10,7 @@ var schema = new Schema({
   startTime: {type: String, trim: true, required: true},
   endTime: {type: String, trim: true, required: true},
   organizerName: {type: String, trim: true, required: true},
+  organizerDescription: {type: String, trim: true, required: true},
   fee: {type: String, default: 0},
   tags: [String],
   numLikes: {type: Number, default: 0},
