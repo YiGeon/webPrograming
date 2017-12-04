@@ -16,7 +16,6 @@ module.exports = io => {
       res.redirect('/signin');
     }
   }
-
   /* GET events listing. */
   router.get('/', catchErrors(async (req, res, next) => {
     const page = parseInt(req.query.page) || 1;
@@ -65,6 +64,11 @@ module.exports = io => {
     }
     event.title = req.body.title;
     event.content = req.body.content;
+    event.location = req.body.location;
+    event.startTime = req.body.startTime;
+    event.endTime = req.body.endTime;
+    event.organizerName = req.body.organizerName;
+    event. fee = req.body.fee;
     event.tags = req.body.tags.split(" ").map(e => e.trim());
 
     await event.save();
@@ -84,6 +88,11 @@ module.exports = io => {
       title: req.body.title,
       author: user._id,
       content: req.body.content,
+      location: req.body.location,
+      startTime: req.body.startTime,
+      endTime: req.body.endTime,
+      organizerName: req.body.organizerName,
+      fee: req.body.fee,
       tags: req.body.tags.split(" ").map(e => e.trim()),
     });
     await event.save();

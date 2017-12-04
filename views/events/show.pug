@@ -3,11 +3,9 @@ extends ../layout
 block content
   .container
     h1.main-title= event.title
-
     .event.show
       .content= event.content
       include _event
-
       .buttons
         if currentUser
           button.btn.btn-primary.event-like-btn(data-id=event.id) 
