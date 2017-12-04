@@ -16,6 +16,45 @@ module.exports = io => {
       res.redirect('/signin');
     }
   }
+  function validateForm(form, options) {
+    var title = form.title || "";
+    var organizerName = form.organizerName || "";
+    var content = form.content || "";
+    var location = form.location || "";
+    var startTime = form.startTime || "";
+    var endTime = form.endTime || "";
+    title = title.trim();
+    organizerName = organizerName.trim();
+    content = content.trim();
+    location = location.trim();
+    startTime = startTime.trim();
+    endTime = endTime.trim();
+  
+    if (!title) {
+      return 'Title is required.';
+    }
+  
+    if (!organizerName) {
+      return 'Organizer Name is required.';
+    }
+  
+    if (!content) {
+      return 'Description is required.';
+    }
+  
+    if (!location) {
+      return 'location is required.';
+    }
+    if (!startTime) {
+      return 'Start Time is required.';
+    }
+    if (!endTime) {
+      return 'End Time is required.';
+    }
+  
+  
+    return null;
+  }
   /* GET events listing. */
   router.get('/', catchErrors(async (req, res, next) => {
     const page = parseInt(req.query.page) || 1;
@@ -56,8 +95,12 @@ module.exports = io => {
   }));
 
   router.put('/:id', catchErrors(async (req, res, next) => {
-    const event = await Event.findById(req.params.id);
-
+    // const event = await Event.findById(req.params.id);
+    const err = validateForm(req.body);
+    if (err) {
+      req.flash('danger', err);
+      return res.redirect('back');
+    }
     if (!event) {
       req.flash('danger', 'Not exist event');
       return res.redirect('back');
@@ -84,6 +127,11 @@ module.exports = io => {
 
   router.post('/', needAuth, catchErrors(async (req, res, next) => {
     const user = req.user;
+    const err = validateForm(req.body);
+    if (err) {
+      req.flash('danger', err);
+      return res.redirect('back');
+    }
     var event = new Event({
       title: req.body.title,
       author: user._id,
