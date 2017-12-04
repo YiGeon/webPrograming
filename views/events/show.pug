@@ -6,6 +6,24 @@ block content
     .event.show
       //- .content= event.content
       include _event
+      
+      .container
+        dl.row
+          dt.col-sm-3 Location
+          dd.col-sm-9= event.location
+          dt.col-sm-3 Time
+          dd.col-sm-1= event.startTime
+          dd.col-sm-1 ~
+          dd.col-sm-7= event.endTime
+          dt.col-sm-3 Organizer Name
+          dd.col-sm-9= event.organizerName
+          dt.col-sm-3 Organizer Description
+          dd.col-sm-9= event.organizerDescription
+          dt.col-sm-3 Price
+          if !event.pee
+            dd.col-sm-9 Free
+          dd.col-sm-9= event.pee
+         
       .buttons
         if currentUser
           button.btn.btn-primary.event-like-btn(data-id=event.id) 
@@ -27,9 +45,9 @@ block content
     if currentUser
       form(action=`/events/${event.id}/answers`, method='POST')
         .form-group
-          label(for='answer') Your Answer
+          label(for='answer') Join Register
           textarea.form-control(name="content", rows="5")
-        button.btn.btn-primary(type="submit") Post Your Answer
+        button.btn.btn-primary(type="submit") Submit
 
 
   script(src='/javascripts/event_client.js')
