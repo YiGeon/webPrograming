@@ -19,12 +19,14 @@ module.exports = io => {
   function validateForm(form, options) {
     var title = form.title || "";
     var organizerName = form.organizerName || "";
+    var organizerDescription = form.organizerDescription || "";
     var content = form.content || "";
     var location = form.location || "";
     var startTime = form.startTime || "";
     var endTime = form.endTime || "";
     title = title.trim();
     organizerName = organizerName.trim();
+    organizerDescription = organizerDescription.trim();
     content = content.trim();
     location = location.trim();
     startTime = startTime.trim();
@@ -114,7 +116,7 @@ module.exports = io => {
     event.startTime = req.body.startTime;
     event.endTime = req.body.endTime;
     event.organizerName = req.body.organizerName;
-    event.organizerDescription = req.bodt.organizerDescription;
+    event.organizerDescription = req.body.organizerDescription;
     event. fee = req.body.fee;
     event.tags = req.body.tags.split(" ").map(e => e.trim());
 
