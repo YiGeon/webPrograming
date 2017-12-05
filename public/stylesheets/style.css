@@ -171,4 +171,10 @@ a:hover {
     color: #bbb;
     cursor: default; }
 
+    @media only screen and (max-device-width: 760px) {
+      .none {
+          display: none;
+      }
+  }
+
 /*# sourceMappingURL=style.css.map */

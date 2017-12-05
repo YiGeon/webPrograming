@@ -21,10 +21,10 @@
 .form-row.form-group
   .col
     label(for="startTime") Start Time
-    input.form-control(type="text", name="startTime", placeholder="Start Time ex) 1:00pm", value=event.startTime)
+    input.form-control(type="text", name="startTime", placeholder="Start Time ex) 2017.10.1 1:00pm", value=event.startTime)
   .col
     label(for="endTime") End Time
-    input.form-control(type="text", name="endTime", placeholder="End Time ex) 2:00pm", value=event.endTime)
+    input.form-control(type="text", name="endTime", placeholder="End Time ex) 2017.10.1 2:00pm", value=event.endTime)
 .form-group
   label(for="tags") Tags
   input.form-control(type="text", name="tags", placeholder="tags separated by spaces", value=event.tags ? event.tags.join(" ") : "")
