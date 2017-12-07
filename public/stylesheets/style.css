@@ -77,6 +77,10 @@ a:hover {
     color: #bababa;
     position: absolute; }
 
+@media only screen and (max-device-width: 760px) {
+  .none {
+    display: none; } }
+
 .form-signin {
   width: 300px;
   margin: 0 auto;
@@ -170,11 +174,5 @@ a:hover {
   .event-like-btn.disabled, .join-like-btn.disabled {
     color: #bbb;
     cursor: default; }
-
-    @media only screen and (max-device-width: 760px) {
-      .none {
-          display: none;
-      }
-  }
 
 /*# sourceMappingURL=style.css.map */
